@@ -16,6 +16,14 @@ def main(page: ft.Page):
                                        on_click=partial(natigate_to, pageName="/formulario"),
                                        width=300)
 
+    botonCron = ft.ElevatedButton(text="CRONTAB",
+                                        on_click=partial(natigate_to, pageName="/crontab"),
+                                        width=300)
+
+    botonTareas = ft.ElevatedButton(text="TAREAS",
+                                    on_click=partial(natigate_to, pageName="/tareas"),
+                                    width=300)
+
 
     # Estructura simplificada
     columna_datos = ft.Column(
@@ -27,6 +35,8 @@ def main(page: ft.Page):
             ft.Text("ÁRBOLES", size=40),
             botonConsultas,
             botonFormulario,
+            botonTareas,
+            botonCron
 
         ]
     )

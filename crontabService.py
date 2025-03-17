@@ -1,6 +1,17 @@
 from crontab import CronTab
 import os
 
+def eliminar_tarer(comentario):
+    cron = CronTab(user=True)
+    print(comentario)
+    for job in cron:
+        print(job.comment)
+        if job.comment == comentario:
+
+            cron.remove(job)
+            cron.write()
+            break
+
 def crear_tarea(min, hora, dia, mes, evento):
     # Crear objeto crontab para el usuario actual
     cron = CronTab(user=True)
@@ -26,4 +37,8 @@ def crear_tarea(min, hora, dia, mes, evento):
     print("Tarea programada con éxito.")
     return True
 
-crear_tarea(47,12,17,3,'Dar mucha claseeeee ')
+def retornar_cron():
+    cron = CronTab(user=True)
+    return cron
+
+#crear_tarea(47,12,17,3,'Dar mucha claseeeee ')

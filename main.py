@@ -5,7 +5,7 @@ import cosultasPage
 import formularioPage
 import mainPage
 import crontabPage
-
+import tareasPage
 
 def main(page: ft.Page):
     page.title = "Aplicación con Páginas en Flet"
@@ -51,6 +51,13 @@ def main(page: ft.Page):
                 ft.View(
                     route="/crontab",
                     controls=[crontabPage.main(page)]
+                )
+            )
+        elif page.route == "/tareas":
+            page.views.append(
+                ft.View(
+                    route="/crontab",
+                    controls=[tareasPage.main(page)]
                 )
             )
         elif page.route == "/inicio":
