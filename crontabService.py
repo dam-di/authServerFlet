@@ -9,7 +9,8 @@ def crear_tarea(min, hora, dia, mes, evento):
 
     # Crear nueva tarea
     #job = cron.new(command=f'$HOME/pythonFlet/recordatorio.sh {recordatorio}', comment=f'Recordatorio')
-    job = cron.new(command=f'{script_path} {evento}', comment=f'Recordatorio: {evento}')
+    job = cron.new(command=f'{script_path} "{evento}"', comment=f'Recordatorio: {evento}')
+
 
 
     # Configurar para que se ejecute cada minuto
@@ -24,3 +25,5 @@ def crear_tarea(min, hora, dia, mes, evento):
 
     print("Tarea programada con éxito.")
     return True
+
+crear_tarea(47,12,17,3,'Dar mucha claseeeee ')

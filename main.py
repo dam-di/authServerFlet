@@ -4,6 +4,7 @@ import flet as ft
 import cosultasPage
 import formularioPage
 import mainPage
+import crontabPage
 
 
 def main(page: ft.Page):
@@ -43,6 +44,13 @@ def main(page: ft.Page):
                 ft.View(
                     route="/consultas",
                     controls=[cosultasPage.main(page)]
+                )
+            )
+        elif page.route == "/crontab":
+            page.views.append(
+                ft.View(
+                    route="/crontab",
+                    controls=[crontabPage.main(page)]
                 )
             )
         elif page.route == "/inicio":
